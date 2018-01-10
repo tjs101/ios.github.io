@@ -16,7 +16,7 @@ nav:
 author: '坤汀'
 nickname: '定心天下'
 bio: '爱好'
-avatar: '{{ site.baseurl}}/assets/img/profile.png'
+avatar: '/assets/img/profile.png'
 
 # Search
 search: true
