@@ -11,6 +11,7 @@ baseurl: '/ios.github.io'
 nav:
   home: '/'
   tags: '/tags.html'
+  about: '/about.html'
 
 # Author 配置博主信息
 author: '坤汀'
