@@ -20,7 +20,7 @@ description: 专注移动互联网开发好多年
             <article class="article-item">
                 {% if post.cover %}
                 <div class="post-cover">
-                    <a class="post-link" href="{{ post.url }}" title="{{ post.title }}"></a>
+                    <a class="post-link" href="{{ site.baseurl}}{{ post.url }}" title="{{ post.title }}"></a>
                     <img src="{{ post.cover }}" alt="">
                 </div>
                 {% endif %}
