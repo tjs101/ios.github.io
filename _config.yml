@@ -5,7 +5,7 @@ keyword: '田家顺,坤汀,上海坤汀网络科技有限公司, ios,android,外
 url: 'https://tjs101.github.io/ios.github.io' # your host
 
 # if you don't need baseurl, you should leave this value blank.
-baseurl: ''
+baseurl: '/ios.github.io'
 
 # Navigation links
 nav:
