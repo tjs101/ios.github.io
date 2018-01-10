@@ -9,8 +9,8 @@ baseurl: '/ios.github.io'
 
 # Navigation links
 nav:
-  home: '/'
-  tags: '/tags.html'
+  home: '{{ post.url }}/'
+  tags: '{{ post.url }}/tags.html'
 
 # Author 配置博主信息
 author: '坤汀'
