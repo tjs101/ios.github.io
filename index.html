@@ -15,6 +15,7 @@ description: 专注移动互联网开发好多年
 </div>
 
 <main class="g-container home-content">
+
     <div class="article-list">
         {% for post in paginator.posts %}
             <article class="article-item">
@@ -86,6 +87,8 @@ description: 专注移动互联网开发好多年
                 {% endfor %}
             </section>
             {% endif %}
+
+            <img src="{{ site.baseurl}}/assets/img/scanCode.png" border="0" width='200' height='260'> 
         </div>
 
         {% if site.search %}

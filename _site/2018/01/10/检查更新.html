@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2018第一天 - 定心天下</title>
+    <title>获取App在线最新版本 - 定心天下</title>
     <meta name="author"  content="坤汀">
-    <meta name="description" content="2018第一天">
-    <meta name="keywords"  content="2018年, 计划, 技能">
+    <meta name="description" content="获取App在线最新版本">
+    <meta name="keywords"  content="app, 版本, 网络">
     <!-- Open Graph -->
-    <meta property="og:title" content="2018第一天 - 定心天下">
+    <meta property="og:title" content="获取App在线最新版本 - 定心天下">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2018/01/01/%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0.html">
+    <meta property="og:url" content="http://localhost:4000/2018/01/10/%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0.html">
     <meta property="og:description" content="很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="定心天下">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -47,23 +47,23 @@
         <div class="post-tags">
             
             
-            <a href="/ios.github.io/tags#2018年" class="post-tag">2018年</a>
+            <a href="/ios.github.io/tags#app" class="post-tag">app</a>
             
-            <a href="/ios.github.io/tags#计划" class="post-tag">计划</a>
+            <a href="/ios.github.io/tags#版本" class="post-tag">版本</a>
             
-            <a href="/ios.github.io/tags#技能" class="post-tag">技能</a>
+            <a href="/ios.github.io/tags#网络" class="post-tag">网络</a>
             
             
         </div>
-        <h1>2018第一天</h1>
+        <h1>获取App在线最新版本</h1>
         <div class="post-meta">
             <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">Quentin</a></a></span>
-            <time class="post-meta-item" datetime="18-01-01"><i class="iconfont icon-date"></i>01 Jan 2018</time>
+            <time class="post-meta-item" datetime="18-01-10"><i class="iconfont icon-date"></i>10 Jan 2018</time>
         </div>
     </div>
     
     <div class="filter"></div>
-    <div class="post-cover" style="background: url('https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180101/1.jpg') center no-repeat; background-size: cover;">
+    <div class="post-cover" style="background: url('https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180110/appstore.jpg') center no-repeat; background-size: cover;">
     
 </header>
 
@@ -76,34 +76,32 @@
 
 <p>代码如下：</p>
 
-<blockquote>
-  <p>AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL
-URLWithString:[NSString
-stringWithFormat:@”https://itunes.apple.com/lookup?id=%@”, kAppID]]]
-completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable
-responseObject, NSError * _Nullable error) {</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if (error == nil) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            id value = responseObject[@"results"];
-            
-            if ([value isKindOfClass:[NSArray class]]) {
-                
-                value = [value firstObject];
-                if ([value isKindOfClass:[NSDictionary class]]) {
-                    
-                    NSString *version = value[@"version"];//最新版本
-
-                }
-            }
-        }
-    }
-
-}];
-[dataTask resume];
-</code></pre></div>  </div>
-</blockquote>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+&gt;     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL
+&gt; URLWithString:[NSString
+&gt; stringWithFormat:@"https://itunes.apple.com/lookup?id=%@", kAppID]]]
+&gt; completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable
+&gt; responseObject, NSError * _Nullable error) {
+&gt;         
+&gt;         if (error == nil) {
+&gt;             if ([responseObject isKindOfClass:[NSDictionary class]]) {
+&gt;                 id value = responseObject[@"results"];
+&gt;                 
+&gt;                 if ([value isKindOfClass:[NSArray class]]) {
+&gt;                     
+&gt;                     value = [value firstObject];
+&gt;                     if ([value isKindOfClass:[NSDictionary class]]) {
+&gt;                         
+&gt;                         NSString *version = value[@"version"];//最新版本
+&gt; 
+&gt;                     }
+&gt;                 }
+&gt;             }
+&gt;         }
+&gt; 
+&gt;     }];
+&gt;     [dataTask resume];
+</code></pre></div></div>
 
 
     </article>
@@ -137,6 +135,7 @@ responseObject, NSError * _Nullable error) {</p>
     </section>
     <section class="post-footer-item read-next">
         
+        
         <div class="read-next-item">
             <a href="/ios.github.io/2018/01/10/app.html" class="read-next-link"></a>
             <section>
@@ -146,19 +145,6 @@ responseObject, NSError * _Nullable error) {</p>
             
             <div class="filter"></div>
             <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180110/1024.png" alt="">
-            
-        </div>
-        
-        
-        <div class="read-next-item">
-            <a href="/ios.github.io/2018/01/01/new.html" class="read-next-link"></a>
-            <section>
-                <span>2018第一天</span>
-                <p>2018年到了</p>
-            </section>
-            
-            <div class="filter"></div>
-            <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180101/1.jpg" alt="">
             
         </div>
         
