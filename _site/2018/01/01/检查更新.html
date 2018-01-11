@@ -10,7 +10,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="2018第一天 - 定心天下">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2018/01/01/new.html">
+    <meta property="og:url" content="http://localhost:4000/2018/01/01/%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0.html">
     <meta property="og:description" content="很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="定心天下">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -70,13 +70,40 @@
 <div class="post-content">
     
     <article class="markdown-body">
-        <h2 id="2018年到了">2018年到了</h2>
+        <h2 id="获取app在线最新版本">获取App在线最新版本</h2>
 
-<ul>
-  <li>希望家人健康快乐</li>
-  <li>新公司业务多多</li>
-  <li>学习新的技能</li>
-</ul>
+<p>kAppID为appID</p>
+
+<p>代码如下：</p>
+
+<blockquote>
+  <p>AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL
+URLWithString:[NSString
+stringWithFormat:@”https://itunes.apple.com/lookup?id=%@”, kAppID]]]
+completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable
+responseObject, NSError * _Nullable error) {</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if (error == nil) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            id value = responseObject[@"results"];
+            
+            if ([value isKindOfClass:[NSArray class]]) {
+                
+                value = [value firstObject];
+                if ([value isKindOfClass:[NSDictionary class]]) {
+                    
+                    NSString *version = value[@"version"];//最新版本
+
+                }
+            }
+        }
+    }
+
+}];
+[dataTask resume];
+</code></pre></div>  </div>
+</blockquote>
 
 
     </article>
@@ -111,17 +138,29 @@
     <section class="post-footer-item read-next">
         
         <div class="read-next-item">
-            <a href="/ios.github.io/2018/01/01/%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0.html" class="read-next-link"></a>
+            <a href="/ios.github.io/2018/01/10/app.html" class="read-next-link"></a>
+            <section>
+                <span>早教助手</span>
+                <p>早教助手</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180110/1024.png" alt="">
+            
+        </div>
+        
+        
+        <div class="read-next-item">
+            <a href="/ios.github.io/2018/01/01/new.html" class="read-next-link"></a>
             <section>
                 <span>2018第一天</span>
-                <p>获取App在线最新版本</p>
+                <p>2018年到了</p>
             </section>
             
             <div class="filter"></div>
             <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180101/1.jpg" alt="">
             
         </div>
-        
         
     </section>
     
