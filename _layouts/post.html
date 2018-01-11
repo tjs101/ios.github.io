@@ -20,7 +20,7 @@
         </div>
         <h1>{{ page.title }}</h1>
         <div class="post-meta">
-            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></a></span>
             <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time>
         </div>
     </div>
@@ -68,7 +68,7 @@
     <section class="post-footer-item read-next">
         {% if page.next.url %}
         <div class="read-next-item">
-            <a href="{{ page.next.url }}" class="read-next-link"></a>
+            <a href="{{ site.baseurl}}{{ page.next.url }}" class="read-next-link"></a>
             <section>
                 <span>{{ page.next.title }}</span>
                 <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
@@ -81,7 +81,7 @@
         {% endif %}
         {% if page.previous.url %}
         <div class="read-next-item">
-            <a href="{{ page.previous.url }}" class="read-next-link"></a>
+            <a href="{{ site.baseurl}}{{ page.previous.url }}" class="read-next-link"></a>
             <section>
                 <span>{{ page.previous.title }}</span>
                 <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
