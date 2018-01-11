@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2018第一天 - 定心天下</title>
+    <title>项目执行命令编译 - 定心天下</title>
     <meta name="author"  content="坤汀">
-    <meta name="description" content="2018第一天">
-    <meta name="keywords"  content="2018年, 计划, 技能">
+    <meta name="description" content="项目执行命令编译">
+    <meta name="keywords"  content="Git, gitpull, gitpush">
     <!-- Open Graph -->
-    <meta property="og:title" content="2018第一天 - 定心天下">
+    <meta property="og:title" content="项目执行命令编译 - 定心天下">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2018/01/01/new.html">
+    <meta property="og:url" content="http://localhost:4000/2018/01/09/Git.html">
     <meta property="og:description" content="很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="定心天下">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -47,36 +47,77 @@
         <div class="post-tags">
             
             
-            <a href="/ios.github.io/tags#2018年" class="post-tag">2018年</a>
+            <a href="/ios.github.io/tags#Git" class="post-tag">Git</a>
             
-            <a href="/ios.github.io/tags#计划" class="post-tag">计划</a>
+            <a href="/ios.github.io/tags#gitpull" class="post-tag">gitpull</a>
             
-            <a href="/ios.github.io/tags#技能" class="post-tag">技能</a>
+            <a href="/ios.github.io/tags#gitpush" class="post-tag">gitpush</a>
             
             
         </div>
-        <h1>2018第一天</h1>
+        <h1>项目执行命令编译</h1>
         <div class="post-meta">
             <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">Quentin</a></a></span>
-            <time class="post-meta-item" datetime="18-01-01"><i class="iconfont icon-date"></i>01 Jan 2018</time>
+            <time class="post-meta-item" datetime="18-01-09"><i class="iconfont icon-date"></i>09 Jan 2018</time>
         </div>
     </div>
     
     <div class="filter"></div>
-    <div class="post-cover" style="background: url('https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180101/1.jpg') center no-repeat; background-size: cover;">
+    <div class="post-cover" style="background: url('https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180109/git.png') center no-repeat; background-size: cover;">
     
 </header>
 
 <div class="post-content">
     
     <article class="markdown-body">
-        <h2 id="2018年到了">2018年到了</h2>
+        <h2 id="项目执行命令编译">项目执行命令编译</h2>
 
-<ul>
-  <li>希望家人健康快乐</li>
-  <li>新公司业务多多</li>
-  <li>学习新的技能</li>
-</ul>
+<p><strong>Git项目</strong></p>
+
+<p>git pull 和 git push</p>
+
+<p>git pull命令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; #!/bin/sh
+#  Script.sh
+#  QBFramework
+#
+#  Created by quentin on 2017/1/20.
+#  Copyright © 2017年 quentin. All rights reserved.
+
+basepath=$(cd `dirname $0`; pwd)
+cd ${basepath}
+git pull
+</code></pre></div></div>
+
+<p>git push命令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c">#  git_push.sh</span>
+<span class="c">#  QBFramework</span>
+<span class="c">#</span>
+<span class="c">#  Created by quentin on 16/7/22.</span>
+<span class="c">#  Copyright © 2016年 Quentin. All rights reserved.</span>
+
+<span class="nv">basepath</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="sb">`</span><span class="nb">dirname</span> <span class="nv">$0</span><span class="sb">`</span><span class="p">;</span> <span class="nb">pwd</span><span class="k">)</span>
+<span class="nb">cd</span> <span class="k">${</span><span class="nv">basepath</span><span class="k">}</span>
+<span class="k">function </span>input<span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"请输入本次修改的内容"</span>
+    <span class="nb">read </span>string
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">string</span><span class="k">}</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">]</span>
+    <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"输入为空，重新输入"</span>
+    input
+    <span class="k">else
+    </span>git pull <span class="o">&amp;&amp;</span> git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="k">${</span><span class="nv">string</span><span class="k">}</span> <span class="o">&amp;&amp;</span> git push
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+input
+</code></pre></div></div>
+
+<p>生成方法：在文本中输入上面代码，然后运行chomd 777 filename即可生成可以直接执行的命令。</p>
 
 
     </article>
@@ -111,17 +152,29 @@
     <section class="post-footer-item read-next">
         
         <div class="read-next-item">
-            <a href="/ios.github.io/2018/01/09/Git.html" class="read-next-link"></a>
+            <a href="/ios.github.io/2018/01/10/IOS%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6.html" class="read-next-link"></a>
             <section>
-                <span>项目执行命令编译</span>
-                <p>项目执行命令编译</p>
+                <span>2017年开发框架</span>
+                <p>2017年写的IOS开发框架</p>
             </section>
             
             <div class="filter"></div>
-            <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180109/git.png" alt="">
+            <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180110/qb.png" alt="">
             
         </div>
         
+        
+        <div class="read-next-item">
+            <a href="/ios.github.io/2018/01/01/new.html" class="read-next-link"></a>
+            <section>
+                <span>2018第一天</span>
+                <p>2018年到了</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="https://raw.githubusercontent.com/tjs101/ios.github.io/master/assets/img/20180101/1.jpg" alt="">
+            
+        </div>
         
     </section>
     

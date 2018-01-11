@@ -19,6 +19,12 @@
     } ,
   
     {
+      "title"    : "项目执行命令编译",
+      "tags"     : "Git gitpull gitpush",
+      "url"      : "/2018/01/09/Git.html"
+    } ,
+  
+    {
       "title"    : "2018第一天",
       "tags"     : "2018年 计划 技能",
       "url"      : "/2018/01/01/new.html"
